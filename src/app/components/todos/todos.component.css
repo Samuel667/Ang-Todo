@@ -1,0 +1,77 @@
+.todos {
+    display: block;
+    /* margin-top: 10px; */
+    background-color: lightblue;
+    color: darkblue;
+    
+    text-align-last: center;
+}
+.todoing{
+    margin-top: 100px;
+}
+.todo {
+    display: block;
+    padding: 10px 15px  ;
+    background-color: #FFF;
+    border-bottom: 1px solid #DDD;
+    text-align-last: center;
+}
+
+.todo:nth-child(even){   
+    background-color: #EEE;    
+}
+.todo:last-of-type{
+    border-bottom: 0;  
+}
+
+.todo .id {
+    flex: 1 1 50px;    
+}
+
+.todo .content{
+    flex: 1 1 100%;    
+}
+.todo .completed{
+    flex: 1 1 100%;    
+}
+
+.todo .datey{
+    flex: 1 1 100%;    
+}
+.todo .hour{
+    flex:1 1 100%;    
+}
+.todo .min{
+    flex:1 1 100%;    
+}
+
+.todo.done .content{
+    text-decoration: line-through;    
+}
+
+.todo-input{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    appearance: none;
+    border:none;
+    background-color: #F3F3F3;
+    margin-top: 15px;
+    font-size: 20px;
+    outline: none;
+}
+button{
+    display:block;
+    width:100%;
+    max-width: 200px;
+    appearance: none;
+    border:none;   
+    outline: none;
+    background: none;
+    background-color: #FE4880;
+    color: #FFF;
+    margin: 15px auto;
+    padding: 10px 15px;
+    font-size: 18px; 
+    font-weight: 100px;
+}

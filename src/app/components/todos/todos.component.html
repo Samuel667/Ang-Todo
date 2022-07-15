@@ -1,0 +1,49 @@
+
+
+
+
+<div class="todos">
+    <!--  -->
+    <form  ngSubmit="addTodo()" ><p >TODO'S</p>
+        <div class="todoing">
+        <input  name="addtodo" placeholder="what to do" [(ngModel)]="namy"/>&NonBreakingSpace;
+        <input type="number" placeholder="hour" name="timeHour" [(ngModel)]="hour"/>&NonBreakingSpace;
+        <input type="number" placeholder="minute"  name="timeMin" [(ngModel)]="min"/>&NonBreakingSpace;
+
+
+        <input name="dateToBeDone" placeholder="enter date to carry out task" [(ngModel)]="dateToBeDone"/>&NonBreakingSpace;
+        <select name="CalendarCount" id="fullDate" value="choose day" [(ngModel)]="calendar"> 
+           
+            <option>SUNDAY</option>
+            <option>MONDAY</option>
+            <option>TUESDAY</option>
+            <option>WEDNESDAY</option>
+            <option>THURSDAY</option>
+            <option>FRIDAY</option>
+            <option>SATURDAY</option>
+        </select>
+        <button   type="submit" (click)="addTodo()">Add Todo</button>
+        <!-- <input type="number"  name="time" [(ngModel)]="day"/>
+        <input type="number"  name="date" [(ngModel)]="min"/> -->
+        </div>
+    </form> 
+<!-- </div> -->
+    <!-- {{dat}}  -->
+    
+    <div class="todo {{ (todo.completed ? 'done' : '') }}" *ngFor= "let todo of Todys; let i = index;">
+            <!-- {{namy.value}} -->
+            <!-- <div (onkeyup)="addTodo(namy)"></div> -->
+        <!-- <input type="button" (click)="addTodo()" value="add"> -->
+        
+       <b>item no</b> <div class="id">{{ i +1}}</div><hr>
+       <b>what to do</b> <div class="content" (click)="toggleDone(i)">{{todo.content}}</div><hr>     
+       <b>Done or Undone</b> <div class="completed">{{todo.completed}}</div> <hr>
+       <b>Date Planned</b><div class="datey">{{todo.datey | date: 'EEE,MMM d, y'}}</div><hr>
+       <b>Time to be done</b><div class="datey">{{todo.hours +  todo.minutes}}</div><hr>
+       <b>Date to be done</b> <div class="datey">{{todo.dateDone}}</div><hr>
+       <b>Day to be done</b> <div class="datey">{{todo.calendars}}</div><hr>
+
+        <button   class="delete" (click)="deleteTodo(i)">Remove</button>
+    </div>
+</div> 
+<!-- add time automatic ticking of todos when done  submit button -->
